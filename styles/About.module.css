@@ -1,0 +1,99 @@
+.pageContainer__wrapper {
+  flex: 1;
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+  padding: 0 20rem;
+}
+.card_Intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0.7;
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 0.1ch;
+  cursor: pointer;
+}
+.card_Intro h1 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 2px;
+}
+.card_Intro p {
+  margin: 0;
+}
+.authorImage {
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+}
+.authorImage img {
+  width: 100%;
+}
+.authorDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  letter-spacing: 0.1ch;
+}
+.authorDescParagraph {
+  padding: 0 20px;
+
+  margin-top: 2rem;
+  text-align: center;
+}
+.authorDescLinks {
+  display: flex;
+  gap: 2rem;
+  margin: 10px;
+}
+.authorDescLinks_logo {
+  font-size: 20px;
+  color: #de3c3c;
+}
+@media screen and (max-width: 1024px) {
+  .pageContainer__wrapper {
+    flex: 1;
+    display: flex;
+
+    margin-top: 4rem;
+
+    justify-content: center;
+    padding: 0 10rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .pageContainer__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 0 2rem;
+  }
+  .card_Intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0.7;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 0.1ch;
+  }
+
+  .authorImage {
+    width: 5rem;
+    border-radius: 100%;
+  }
+  .authorImage img {
+    width: 100%;
+    border-radius: 100%;
+  }
+}
