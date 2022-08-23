@@ -71,12 +71,11 @@ export const getServerSideProps = async (pageContext) => {
   }
 
   const apiResponse = await fetch(
-    `https://newsapi.org/v2/everything?sources=bbc-news&pageSize=10&page=${pageNumber}`,
-    {
+    `https://newsapi.org/v2/everything?sources=bbc-news&pageSize=10&page=${pageNumber}&apiKey=2bfbc184bb9b49bf992b18776a5c5a89`
+    /*{
       headers: {
         Authorization: `Bearer ${process.env.API_KEY}`,
-      },
-    }
+      }*/
   );
   const apiJson = await apiResponse.json();
   const { articles } = apiJson;
