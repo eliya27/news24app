@@ -11,13 +11,13 @@ const Feed = ({ pageNumber, articles }) => {
         <div key={index} className={FeedStyles.post}>
           {!!article.urlToImage && (
             <div className={FeedStyles.post__img}>
-              <img src={article?.urlToImage} alt="" />
+              <img src={article.urlToImage} alt="" />
             </div>
           )}
           <h1 onClick={() => (window.location.href = article.url)}>
-            {article?.title}
+            {article.title}
           </h1>
-          <p>{article?.description}</p>
+          <p>{article.description}</p>
         </div>
       ))}
       <div className={FeedStyles.pager}>
