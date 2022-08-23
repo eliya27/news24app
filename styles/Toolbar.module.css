@@ -37,11 +37,16 @@
     width: 100%;
     padding: 0 5px;
   }
-
+  .mobileNav_logo {
+    color: #de3c3c;
+    letter-spacing: 0.1ch;
+    font-size: 1.5rem;
+  }
   .mobileMenu {
     position: absolute;
     display: flex;
     background-color: white;
+
     color: #de3c3c;
     width: 100%;
     height: 100vh;

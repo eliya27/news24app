@@ -9,7 +9,9 @@ export default function Home() {
     <div className="pageContainer">
       <Toolbar />
       <div className={styles.main}>
-        <h1>News24 web</h1>
+        <h1>
+          News<span className={styles.logo}>360&deg;</span> web
+        </h1>
         <p>
           We got you covered for all the latest News around the globe, we have
           an API that fetch data from all over the world spanning from Sports,

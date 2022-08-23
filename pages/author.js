@@ -34,7 +34,7 @@ const author = ({ author }) => {
               Based on Dar-es-salaam, Tanzania. I am a Full stack developer and
               a college student, UDSM taking Bachelor Degree in Computer
               Science. I am open to work for any web development project, check
-              out my profile below for more information.
+              out my profiles below for more information.
             </p>
           </div>
           <div className={aboutStyles.authorDescLinks}>

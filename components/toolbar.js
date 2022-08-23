@@ -16,7 +16,9 @@ const Toolbar = () => {
       </div>
       <div className={ToolbarStyles.mobile}>
         <div className={ToolbarStyles.mobileNav}>
-          <h2>News24</h2>
+          <h2>
+            News<span className={ToolbarStyles.mobileNav_logo}>360&deg;</span>
+          </h2>
           <h2
             onClick={() => {
               setToggleMenu(!toggleMenu);
