@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'News365'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8D4E75CF4A14120A79864EBD6F7B158 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E1BEBE06BB7F471898782F6FCF86CB29 }}
           package: .
