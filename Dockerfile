@@ -1,42 +1,19 @@
-# Install dependencies only when needed
-FROM node:16-alpine AS deps
-RUN apk add --no-cache libc6-compat
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install --frozen-lockfile
+FROM node:16
 
-# Rebuild the source code only when needed
-FROM node:16-alpine AS builder
+# Create app directory
+WORKDIR /usr/src/app
 
-WORKDIR /app
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-COPY --from=deps /app/node_modules ./node_modules
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
+# Bundle app source
 COPY . .
 
-RUN npm build
-
-# Production image, copy all the files and run next
-FROM node:16-alpine AS runner
-WORKDIR /app
-
-ENV NODE_ENV production
-
-RUN addgroup --system --gid 1001 bloggroup
-RUN adduser --system --uid 1001 bloguser
-
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./package.json
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=bloguser:bloggroup /app/.next/standalone ./
-COPY --from=builder --chown=bloguser:bloggroup /app/.next/static ./.next/static
-
-USER bloguser
-
-EXPOSE 3000
-
-ENV PORT 3000
-
-CMD ["node", "server.js"]
+EXPOSE 6000
+CMD [ "node", "app.js" ]
