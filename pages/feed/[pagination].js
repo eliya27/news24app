@@ -7,7 +7,7 @@ const Feed = ({ pageNumber, articles }) => {
   return (
     <div className={FeedStyles.main}>
       <Toolbar />
-      {articles.map((article, index) => (
+      {articles?.map((article, index) => (
         <div key={index} className={FeedStyles.post}>
           {!!article.urlToImage && (
             <div className={FeedStyles.post__img}>
